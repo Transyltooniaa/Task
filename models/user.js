@@ -13,4 +13,6 @@ const userSchema = new mongoose.Schema({
     otp: String
 }, { timestamps: true });
 
+
+
 module.exports = mongoose.model('User', userSchema);
