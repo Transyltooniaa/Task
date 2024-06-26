@@ -5,6 +5,7 @@ module.exports = {
     dbPassword : process.env.DB_PASSWORD,
     jwtSecret: process.env.JWT_SECRET,
     emailUser: process.env.EMAIL_USER,
-    emailPass: process.env.EMAIL_PASS
+    emailPass: process.env.EMAIL_PASS,
+    port : process.env.PORT
 };
 

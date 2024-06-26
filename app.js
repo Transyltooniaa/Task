@@ -6,15 +6,14 @@ const bodyParser = require('body-parser');
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
 const adminRoutes = require('./routes/adminRoutes');
+const config = require('./config');
 require('dotenv').config();
 require('./database/MongoConnection');
 
-const PORT = process.env.port || 3000;
+const PORT = config.port || 3000;
 
 
 app.use(bodyParser.json());
-
-
 
 const publicDirectoryPath = path.join(__dirname,'/public');
 const viewsPath = path.join(__dirname,'/templates/views');
