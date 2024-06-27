@@ -12,7 +12,7 @@ exports.adminRegister = async (req, res) => {
         await newAdmin.save();
         res.status(201).send('Admin registered');
     } catch (err) {
-        res.status(400).send('Error registering admin');
+        res.status(400).send(`Error registering admin: ${err}`);
     }
 };
 
