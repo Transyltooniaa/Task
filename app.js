@@ -7,13 +7,16 @@ const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const config = require('./config');
+const { limiter } = require('./middlewares/rateLimiter');
 require('dotenv').config();
 require('./database/MongoConnection');
+require('./cronJobs'); 
 
 const PORT = config.port || 3000;
 
 
 app.use(bodyParser.json());
+app.use(limiter);
 
 const publicDirectoryPath = path.join(__dirname,'/public');
 const viewsPath = path.join(__dirname,'/templates/views');
